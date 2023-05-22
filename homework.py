@@ -42,3 +42,50 @@
 #     else:
 #         print("Mission impossible. Call to Ethan Hunt.")
 
+# -------------------------------------------------------Задача 10-----------------------------------------------------
+
+# qty = int(input("How many coins on the table: "))
+# if qty <2:
+#     print("Need more gold")
+# else:
+#     heads = 0
+#     tails = 0
+#     for i in range(qty):
+#         temp = int(input(f"Input heads (1) or tails (0) for the {i+1} coin: "))
+#         if temp == 1:
+#             heads+=1
+#         elif temp ==0:
+#             tails +=1
+#         else:
+#             print("Error")
+#             break
+#     if heads > tails:
+#         print(f"We need to turn {tails} coins")
+#     elif tails >heads:
+#         print(f"We need to turn {heads} coins")
+#     else:
+#         print(f"We need to turn a half of all coins - {tails}. ")
+
+# -------------------------------------------------------Задача 12-----------------------------------------------------
+
+# print("Come up with two numbers between 1 and 1000")
+# s = int(input("Input sum of them: "))
+# p  = int(input("Input product of them: "))
+# if p<1 or p>1000:
+#     print("Error")
+# else:
+#     flag = True
+#     for i in range(s):
+#         firstNumber = s-i
+#         secondNumber = i
+#         if firstNumber*secondNumber == p and flag:
+#             flag = False
+#             print(f'So, your numbers are: {firstNumber}, {secondNumber}')
+        
+# -------------------------------------------------------Задача 14-----------------------------------------------------
+
+# number = int(input("Input some positive number: "))
+# i = 0
+# while 2**i <= number:
+#     print(2**i)
+#     i+=1
