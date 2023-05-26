@@ -89,3 +89,51 @@
 # while 2**i <= number:
 #     print(2**i)
 #     i+=1
+
+# -------------------------------------------------------Задача 16-----------------------------------------------------
+
+# from random import randint
+# listsize = int(input("Input list size: "))
+# somelist = [randint(1,4) for i in range(listsize)]
+# number_to_find = int(input("Input number from 1 to 4 to find it's quantity in list: "))
+# counter = 0
+# print(somelist)
+# for i in range(len(somelist)):
+#     if somelist[i] == number_to_find:
+#         counter +=1
+# print(f'{number_to_find} is appears in the list {counter} times')
+
+# -------------------------------------------------------Задача 18-----------------------------------------------------
+# from random import randint
+# listsize = int(input("Input list size: "))
+# somelist = [randint(1,100) for i in range(listsize)]
+# number_to_find = int(input("Input some number from 1 to 100. I'll try to find the closest number in the list: "))
+# print(somelist)
+# diff_list = [abs(somelist[i]- number_to_find) for i in range(listsize)]
+# result = diff_list.index(min(diff_list))
+# print(somelist[result])
+
+# -------------------------------------------------------Задача 18-----------------------------------------------------
+alphabet = [
+            {'A, E, I, O, U, L, N, S, T, R, А, В, Е, И, Н, О, Р, С, Т' : 1 },
+            {'D, G, Д, К, Л, М, П, У ': 2 },
+            {'B, C, M, P, Б, Г, Ё, Ь, Я': 3 },
+            {'F, H, V, W, Y, Й, Ы': 4 },
+            {'K, Ж, З, Х, Ц, Ч': 5 },
+            {'J, X, Ш, Э, Ю': 8 },
+            {'Q, Z, Ф, Щ, Ъ': 10}
+            ]
+
+word = str(input("Input the word: ")).upper()
+result = 0
+for character in word:
+    for i in range(len(alphabet)):
+        for items in alphabet[i].items():
+            for j in str(items):
+                if j == character and i <5:
+                    result +=i+1
+                if j== character and i ==5:
+                    result += 8
+                if j == character and i == 6:
+                    result+= 10
+print(result)  
