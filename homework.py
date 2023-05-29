@@ -113,27 +113,69 @@
 # result = diff_list.index(min(diff_list))
 # print(somelist[result])
 
-# -------------------------------------------------------Задача 18-----------------------------------------------------
-alphabet = [
-            {'A, E, I, O, U, L, N, S, T, R, А, В, Е, И, Н, О, Р, С, Т' : 1 },
-            {'D, G, Д, К, Л, М, П, У ': 2 },
-            {'B, C, M, P, Б, Г, Ё, Ь, Я': 3 },
-            {'F, H, V, W, Y, Й, Ы': 4 },
-            {'K, Ж, З, Х, Ц, Ч': 5 },
-            {'J, X, Ш, Э, Ю': 8 },
-            {'Q, Z, Ф, Щ, Ъ': 10}
-            ]
+# -------------------------------------------------------Задача 20-----------------------------------------------------
+# alphabet = [
+#             {'A, E, I, O, U, L, N, S, T, R, А, В, Е, И, Н, О, Р, С, Т' : 1 },
+#             {'D, G, Д, К, Л, М, П, У ': 2 },
+#             {'B, C, M, P, Б, Г, Ё, Ь, Я': 3 },
+#             {'F, H, V, W, Y, Й, Ы': 4 },
+#             {'K, Ж, З, Х, Ц, Ч': 5 },
+#             {'J, X, Ш, Э, Ю': 8 },
+#             {'Q, Z, Ф, Щ, Ъ': 10}
+#             ]
+# v.1
 
-word = str(input("Input the word: ")).upper()
-result = 0
-for character in word:
-    for i in range(len(alphabet)):
-        for items in alphabet[i].items():
-            for j in str(items):
-                if j == character and i <5:
-                    result +=i+1
-                if j== character and i ==5:
-                    result += 8
-                if j == character and i == 6:
-                    result+= 10
-print(result)  
+# word = str(input("Input the word: ")).upper()
+# result = 0
+# for character in word:
+#     for i in range(len(alphabet)):
+#         for items in alphabet[i].items():
+#             for j in str(items):
+#                 if j == character and i <5:
+#                     result +=i+1
+#                 if j== character and i ==5:
+#                     result += 8
+#                 if j == character and i == 6:
+#                     result+= 10
+# print(result)  
+
+#v.2
+
+# word = str(input("Input the word: ")).upper()
+# result = 0
+# for character in word:
+#     for i in range(len(alphabet)):
+#         for k, v in alphabet[i].items():
+#             for n in k:
+#                 if character == n:
+#                     result += v
+# print(result)  
+
+# -------------------------------------------------------Задача 22-----------------------------------------------------
+
+# from random import randint
+# n = int(input("Input size of the first list: "))
+# m = int(input("Input size of the second list: "))
+# first_list = [int(input(f'Input {i+1} element of the first list: ')) for i in range(n)]
+# second_list = [int(input(f'Input {i+1} elemen of the second list: ')) for i in range(m)]
+# result_list = [i for i in first_list if i in second_list]
+# print(*sorted(result_list))
+
+# -------------------------------------------------------Задача 22-----------------------------------------------------
+
+from random import randint
+
+qty_bushes = -1
+while qty_bushes <4:
+    qty_bushes = int(input("How many bushes in the bed: "))
+berry_list = [randint(0, 400) for i in range(qty_bushes)]
+# print(berry_list)
+bush_number = len(berry_list)
+max_qty_3berries = berry_list[0] + berry_list[-1] + berry_list[-2]    #max - if we stay opposite last bush
+for i in range(len(berry_list)-1):
+    current_qty_3berries = berry_list[i] + berry_list[i-1] + berry_list[i+1]
+    #print(current_qty_3berries)
+    if current_qty_3berries > max_qty_3berries:
+        max_qty_3berries = current_qty_3berries
+        bush_number = i + 1
+print(f'We need to stay opposite bush № {bush_number} to collect maximum: {max_qty_3berries}.')
