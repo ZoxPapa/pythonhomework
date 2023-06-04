@@ -161,21 +161,21 @@
 # result_list = [i for i in first_list if i in second_list]
 # print(*sorted(result_list))
 
-# -------------------------------------------------------Задача 22-----------------------------------------------------
+# -------------------------------------------------------Задача 24-----------------------------------------------------
 
-from random import randint
+# from random import randint
 
-qty_bushes = -1
-while qty_bushes <4:
-    qty_bushes = int(input("How many bushes in the bed: "))
-berry_list = [randint(0, 400) for i in range(qty_bushes)]
-# print(berry_list)
-bush_number = len(berry_list)
-max_qty_3berries = berry_list[0] + berry_list[-1] + berry_list[-2]    #max - if we stay opposite last bush
-for i in range(len(berry_list)-1):
-    current_qty_3berries = berry_list[i] + berry_list[i-1] + berry_list[i+1]
-    #print(current_qty_3berries)
-    if current_qty_3berries > max_qty_3berries:
-        max_qty_3berries = current_qty_3berries
-        bush_number = i + 1
-print(f'We need to stay opposite bush № {bush_number} to collect maximum: {max_qty_3berries}.')
+# qty_bushes = -1
+# while qty_bushes <4:
+#     qty_bushes = int(input("How many bushes in the bed: "))
+# berry_list = [randint(0, 400) for i in range(qty_bushes)]
+# # print(berry_list)
+# bush_number = len(berry_list)
+# max_qty_3berries = berry_list[0] + berry_list[-1] + berry_list[-2]    #max - if we stay opposite last bush
+# for i in range(len(berry_list)-1):
+#     current_qty_3berries = berry_list[i] + berry_list[i-1] + berry_list[i+1]
+#     #print(current_qty_3berries)
+#     if current_qty_3berries > max_qty_3berries:
+#         max_qty_3berries = current_qty_3berries
+#         bush_number = i + 1
+# print(f'We need to stay opposite bush № {bush_number} to collect maximum: {max_qty_3berries}.')
