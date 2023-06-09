@@ -163,7 +163,7 @@
 
 # -------------------------------------------------------Задача 24-----------------------------------------------------
 
-# from random import randint
+from random import randint
 
 # qty_bushes = -1
 # while qty_bushes <4:
@@ -179,3 +179,15 @@
 #         max_qty_3berries = current_qty_3berries
 #         bush_number = i + 1
 # print(f'We need to stay opposite bush № {bush_number} to collect maximum: {max_qty_3berries}.')
+
+# -------------------------------------------------------Задача 30-----------------------------------------------------
+# def ariphm_prog(start, step, qty):
+#     return [start+i*step for i in range(qty)]
+# print(ariphm_prog(7, 2, 10))
+# -------------------------------------------------------Задача 32-----------------------------------------------------
+# somelist = [randint(1,50) for i in range(10)]
+# print(somelist)
+# def scope_find(anylist: list, first_num: int, second_num: int):
+#     return[anylist.index(i) for i in anylist if first_num <= i <= second_num]
+# print(scope_find(somelist, 10, 20))
+
